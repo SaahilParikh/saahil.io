@@ -23,15 +23,15 @@ export default function Home() {
     <main className={styles.main}>
       <Hero {...HERO_COPY} />
       <ProjectsSection
-        id="projects"
-        title="Selected projects"
-        projects={sideProjects}
-      />
-      <ProjectsSection
         id="research"
         title="Research"
         projects={researchProjects}
         emptyMessage="Forthcoming — research notes and longer-form work will live here."
+      />
+      <ProjectsSection
+        id="projects"
+        title="Selected projects"
+        projects={sideProjects}
       />
       <SiteFooter {...FOOTER_COPY} />
     </main>

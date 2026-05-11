@@ -4,7 +4,7 @@ import styles from './Hero.module.css';
 const EXTERNAL_ARROW = '↗';
 const DOWNLOAD_ARROW = '↓';
 
-type ContactLinkKind = 'external' | 'mailto' | 'download';
+type ContactLinkKind = 'external' | 'download';
 
 type ContactLink = {
   label: string;
@@ -24,12 +24,6 @@ const CONTACT_LINKS: readonly ContactLink[] = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/saahilparikh',
     kind: 'external',
-    arrow: EXTERNAL_ARROW,
-  },
-  {
-    label: 'Email',
-    href: 'mailto:hi@saahil.io',
-    kind: 'mailto',
     arrow: EXTERNAL_ARROW,
   },
   {
@@ -68,17 +62,18 @@ function ContactLinkItem({ link }: { link: ContactLink }) {
     </>
   );
 
-  if (link.kind === 'external') {
-    return <ExternalLink href={link.href}>{content}</ExternalLink>;
-  }
-
   if (link.kind === 'download') {
     return (
-      <a href={link.href} target="_blank" rel="noopener noreferrer">
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.resumeLink}
+      >
         {content}
       </a>
     );
   }
 
-  return <a href={link.href}>{content}</a>;
+  return <ExternalLink href={link.href}>{content}</ExternalLink>;
 }
