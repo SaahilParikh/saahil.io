@@ -48,6 +48,28 @@ export const projects: readonly Project[] = [
     category: 'projects',
     writeup: LIPSUM_WRITEUP,
   },
+  {
+    slug: 'dynamic-dec-los-rrt',
+    name: 'Dynamic Dec-LOS-RRT',
+    oneliner:
+      'Decentralized motion planning for dynamic agents communicating only when they have line of sight.',
+    href: 'https://github.com/SaahilParikh/DYNAMIC-DEC-LOS-RRT/blob/main/Research%20Paper.pdf',
+    tags: ['robotics', 'motion-planning', 'multi-agent'],
+    year: 2022,
+    category: 'research',
+    writeup: LIPSUM_WRITEUP,
+  },
+  {
+    slug: 'ble-quadcopter',
+    name: 'BLE Quadcopter',
+    oneliner:
+      'An EECS149 quadcopter controlled over Bluetooth Low Energy — embedded firmware, sensor fusion, and a tethered ground station.',
+    href: 'https://github.com/SaahilParikh/Quadcopter',
+    tags: ['embedded', 'ble', 'control-systems'],
+    year: 2021,
+    category: 'research',
+    writeup: LIPSUM_WRITEUP,
+  },
 ];
 
 export function findProjectBySlug(slug: string): Project | undefined {
