@@ -19,11 +19,11 @@ const env: cdk.Environment = { account, region };
 
 const domainName = app.node.tryGetContext('domainName') as string;
 const githubOwner = app.node.tryGetContext('githubOwner') as string;
-const githubRepo = app.node.tryGetContext('githubRepo') as string;
+const githubRepos = app.node.tryGetContext('githubRepos') as string[] | undefined;
 
-if (!domainName || !githubOwner || !githubRepo) {
+if (!domainName || !githubOwner || !githubRepos || githubRepos.length === 0) {
   throw new Error(
-    'Missing context. Expected domainName, githubOwner, githubRepo in cdk.json.',
+    'Missing context. Expected domainName, githubOwner, and a non-empty githubRepos array in cdk.json.',
   );
 }
 
@@ -36,10 +36,10 @@ const siteStack = new SiteStack(app, 'SaahilSiteStack', {
 new GithubOidcStack(app, 'SaahilGithubOidcStack', {
   env,
   githubOwner,
-  githubRepo,
+  githubRepos,
   siteBucketArn: siteStack.bucketArn,
   distributionId: siteStack.distributionId,
-  description: `GitHub Actions OIDC role for ${githubOwner}/${githubRepo}.`,
+  description: `GitHub Actions OIDC role for ${githubOwner} (${githubRepos.join(', ')}).`,
 });
 
 app.synth();

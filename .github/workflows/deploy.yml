@@ -74,9 +74,11 @@ jobs:
           aws s3 sync "$BUILD_OUTPUT_DIR/" "s3://$BUCKET/" \
             --delete \
             --exclude "$HASHED_ASSETS_PATTERN" \
+            --exclude "$EXTERNAL_ASSET_RESUME" \
             --cache-control "$REVALIDATE_CACHE_CONTROL"
         env:
           BUCKET: ${{ vars.SITE_BUCKET_NAME }}
+          EXTERNAL_ASSET_RESUME: resume.pdf
 
       - name: Invalidate CloudFront cache
         run: |
