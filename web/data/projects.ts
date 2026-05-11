@@ -27,6 +27,17 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 export const projects: readonly Project[] = [
   {
+    slug: 'distributed-protocol-visualizer',
+    name: 'Distributed Protocol Visualizer',
+    oneliner:
+      'An interactive Raft visualizer — seeded deterministic simulation in the browser, with playback, scrubbing, and a tunable drop rate.',
+    href: 'https://saahilparikh.github.io/distributed-protocol-visualizer/',
+    tags: ['typescript', 'distributed-systems', 'raft', 'visualization'],
+    year: 2026,
+    category: 'projects',
+    writeup: LIPSUM_WRITEUP,
+  },
+  {
     slug: 'graphosaurus',
     name: 'Graphosaurus',
     oneliner:
