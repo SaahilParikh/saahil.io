@@ -24,6 +24,16 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 export const projects: readonly Project[] = [
   {
+    slug: 'graphosaurus',
+    name: 'Graphosaurus',
+    oneliner:
+      'A short, declarative sentence about what Graphosaurus is. Replace me with the real one.',
+    href: 'https://graphosaurus.com',
+    tags: ['typescript', 'graphs', 'visualization'],
+    year: 2026,
+    writeup: LIPSUM_WRITEUP,
+  },
+  {
     slug: 'phrasaurus',
     name: 'Phrasaurus',
     oneliner:
@@ -31,36 +41,6 @@ export const projects: readonly Project[] = [
     href: 'https://phrasaurus.com',
     tags: ['typescript', 'nlp', 'web'],
     year: 2026,
-    writeup: LIPSUM_WRITEUP,
-  },
-  {
-    slug: 'project-two',
-    name: 'Project Two',
-    oneliner:
-      'Another placeholder. Aim for one line — say what it does and what is interesting about it.',
-    href: 'https://github.com/SaahilParikh',
-    tags: ['python', 'ml'],
-    year: 2025,
-    writeup: LIPSUM_WRITEUP,
-  },
-  {
-    slug: 'project-three',
-    name: 'Project Three',
-    oneliner:
-      'Third placeholder. The grid balances at three or four entries on desktop.',
-    href: 'https://github.com/SaahilParikh',
-    tags: ['rust', 'systems'],
-    year: 2024,
-    writeup: LIPSUM_WRITEUP,
-  },
-  {
-    slug: 'project-four',
-    name: 'Project Four',
-    oneliner:
-      'Fourth placeholder. Keep descriptions short — the page reads as a quick scan.',
-    href: 'https://github.com/SaahilParikh',
-    tags: ['infra', 'aws'],
-    year: 2024,
     writeup: LIPSUM_WRITEUP,
   },
 ];
